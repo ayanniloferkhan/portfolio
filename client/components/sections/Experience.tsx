@@ -83,7 +83,7 @@ export const Experience = () => {
     {
       company: 'TaskUS',
       position: 'Remote Robotic Assistant',
-      period: 'Feb 2025 - Present',
+      period: 'Feb 2025 - Feb 2026',
       description: [
         'Contributing to innovative robotic process automation solutions',
         'Developing scalable solutions for enterprise clients',

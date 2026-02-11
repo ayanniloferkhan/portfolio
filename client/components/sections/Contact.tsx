@@ -2,13 +2,15 @@ import { motion } from 'framer-motion';
 import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { Mail, Phone, Linkedin, MessageSquare, CheckCircle } from 'lucide-react';
+import { log } from 'node:console';
 
 // Initialize EmailJS - Replace with your service ID
 // Get these from: https://dashboard.emailjs.com/
-const EMAILJS_SERVICE_ID = 'service_your_service_id';
-const EMAILJS_TEMPLATE_ID = 'template_your_template_id';
-const EMAILJS_PUBLIC_KEY = 'your_public_key';
-
+const EMAILJS_SERVICE_ID = (import.meta as any).env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID =  (import.meta as any).env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = (import.meta as any).env.VITE_EMAILJS_PUBLIC_KEY;
+console.log(EMAILJS_PUBLIC_KEY)
+console.log(EMAILJS_SERVICE_ID)
 // Initialize EmailJS
 if (EMAILJS_PUBLIC_KEY) {
   emailjs.init(EMAILJS_PUBLIC_KEY);
@@ -287,8 +289,8 @@ export const Contact = () => {
         </div>
       </div>
 
-      {/* EmailJS Setup Note */}
-      <motion.div
+      
+      {/* <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -306,7 +308,7 @@ export const Contact = () => {
           </a>
           {' '}and replace the placeholders in the Contact component with your credentials.
         </p>
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 };
